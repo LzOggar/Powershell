@@ -132,7 +132,7 @@ Function Get-LocalPrinter() {
     Get-WmiObject -Class Win32_Printer | Select-Object -Property Location,Local,Network,Name,@{Name="PrinterStatus";Expression={switch($_.PrinterStatus) {1{"Other"} 2{"Unknown"} 3{"Idle"} 4{"Printing"} 5{"Warmup"} 6{"Stopped printing"} 7{"Offline"}}}},ShareName,SystemName
 }
 
-Function Get-DesktoMonitor()
+Function Get-DesktopMonitor()
 {
     <#
         .SYNOPSYS
